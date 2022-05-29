@@ -231,7 +231,7 @@ class BaseEditor : public RegionHandler
   const Region* def_PairEnd;
 
   /** Basic HRC region mapping */
-  const RegionDefine *rd_def_Text, *rd_def_HorzCross, *rd_def_VertCross;
+  const RegionDefine *rd_def_Text, *rd_def_HorzCross, *rd_def_VertCross, *rd_def_Whitespace;
 
   void startParsing(size_t lno) override;
   void endParsing(size_t lno) override;

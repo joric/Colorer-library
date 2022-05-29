@@ -47,7 +47,7 @@ BaseEditor::BaseEditor(ParserFactory* parserFactory_, LineSource* lineSource_)
 
   setRegionCompact(regionCompact);
 
-  rd_def_Text = rd_def_HorzCross = rd_def_VertCross = nullptr;
+  rd_def_Text = rd_def_HorzCross = rd_def_VertCross = rd_def_Whitespace = nullptr;
 }
 
 BaseEditor::~BaseEditor()
@@ -103,11 +103,12 @@ void BaseEditor::remapLRS(bool recreate)
   lrSupport->setRegionMapper(regionMapper);
   lrSupport->setSpecialRegion(def_Special);
   invalidLine = 0;
-  rd_def_Text = rd_def_HorzCross = rd_def_VertCross = nullptr;
+  rd_def_Text = rd_def_HorzCross = rd_def_VertCross = rd_def_Whitespace = nullptr;
   if (regionMapper != nullptr) {
     rd_def_Text = regionMapper->getRegionDefine("def:Text");
     rd_def_HorzCross = regionMapper->getRegionDefine("def:HorzCross");
     rd_def_VertCross = regionMapper->getRegionDefine("def:VertCross");
+    rd_def_Whitespace = regionMapper->getRegionDefine("def:Whitespace");
   }
 }
 
